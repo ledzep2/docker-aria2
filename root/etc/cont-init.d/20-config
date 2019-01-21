@@ -1,6 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 mkdir -p /webui /mnt
+chmod +x /defaults/trackers-list-update.sh
 
 # copy
 
@@ -8,7 +9,10 @@ mkdir -p /webui /mnt
 
 [[ ! -f /config/aria2.session ]] && touch /config/aria2.session
 
+/defaults/trackers-list-update.sh 2>&1
+
 # permissions
 chown abc:abc -R \
 	/webui \
-	/mnt
+	/mnt \
+	/config
