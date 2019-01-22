@@ -18,7 +18,7 @@ RUN \
 	&& curl -fSL https://github.com/mayswind/AriaNg/releases/download/${ARIANG_VERSION}/AriaNg-${ARIANG_VERSION}.zip -o ariang.zip \
 	&& mkdir -p /webui \
 	&& unzip ariang.zip -d /webui \
-	&& sed -i "s|'max-connection-per-server': {type: 'integer',defaultValue: '1',required: true,min: 1,max: 16}|'max-connection-per-server': {type: 'integer',defaul,required: true,min: 1}|g" /webui/js/aria-ng-46df9fae24.min.js \
+	&& sed -i "s|'max-connection-per-server': {type: 'integer',defaultValue: '1',required: true,min: 1,max: 16}|'max-connection-per-server': {type: 'integer',defaul,required: true,min: 1}|g" /webui/js/aria-ng-*.min.js \
 	&& curl -fSL https://github.com/aria2/aria2/releases/download/release-${ARIA2_VERSION}/aria2-${ARIA2_VERSION}.tar.xz -o aria2.tar.xz \
 	&& tar xJf aria2.tar.xz \
 	&& cd aria2-${ARIA2_VERSION} \
