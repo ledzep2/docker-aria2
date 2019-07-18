@@ -30,6 +30,8 @@ RUN \
 	&& apk add libstdc++ \
 	&& rm -rf /tmp
 
+RUN apk add wget
+
 # copy local files
 COPY root/ /
 
